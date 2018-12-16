@@ -21,4 +21,21 @@ RuleQueue：VolcanoPlanner 专用，需要关注的是 phaseRuleMapping 和 matc
 - [ ] **为什么每个阶段都要去注册一下当前这个 VolcanoRuleMatch？**
     
 我们先来看这个问题：
-- [ ] addMatch() 什么时候会被调用？
+- [x] addMatch() 什么时候会被调用？
+
+    搜索完所有对这个函数调用后，addMatch() 这个函数只被 DeferringRuleCall 在 onMatch() 的时候被调用了，
+    而 DeferringRuleCall 的 onMatch() 函数只可能在某个 sub plan match 上一个 rule 后被调用，发生在 VolcanoRuleCall
+    的 matchRecurse() 函数里面。
+    
+    而 VolcanoRuleCall 的 match 函数只会在 VolcanoPlanner 的 fireRules() 函数中被调用。扫了一圈所有 fireRules() 的函数调用，发现传入的
+    deferred 参数的值都是 true
+    
+    也就是说，当我们 fireRules() 找到匹配的 rule 后，会将当前的 rule 放入到对应阶段的 match list 中。这个 insert 的过程略微曲折：构造一个
+    DeferringRuleCall，然后调用他的 onMatch() 函数。
+    
+    那么现在我们需要重新审视 matchListMap 了：它里面的所有 VolcanoRuleMatch 都是根据当前 RelNode 找到的 rule match，但是这个 rule
+    没有在发现 match 后立马 apply，而是放入到了 matchListMap 中。
+    
+那么另一个问题来了：
+
+- [ ] 什么时候 fireRules()?
