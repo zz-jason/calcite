@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.apache.calcite.rex.RexNode</OriginalElement>
+  <nodes>
+    <node x="634.875" y="123.0">org.apache.calcite.rex.RexFieldAccess</node>
+    <node x="0.0" y="101.0">org.apache.calcite.rex.RexLiteral</node>
+    <node x="1129.25" y="123.0">org.apache.calcite.rex.RexRangeRef</node>
+    <node x="125.75" y="290.0">org.apache.calcite.rex.RexSubQuery</node>
+    <node x="673.75" y="413.0">org.apache.calcite.rex.RexInputRef</node>
+    <node x="591.0" y="514.0">org.apache.calcite.rex.RexPatternFieldRef</node>
+    <node x="663.375" y="0.0">org.apache.calcite.rex.RexNode</node>
+    <node x="938.25" y="123.0">org.apache.calcite.rex.RexVariable</node>
+    <node x="877.75" y="413.0">org.apache.calcite.rex.RexLocalRef</node>
+    <node x="945.75" y="290.0">org.apache.calcite.rex.RexDynamicParam</node>
+    <node x="1121.75" y="290.0">org.apache.calcite.rex.RexCorrelVariable</node>
+    <node x="809.75" y="290.0">org.apache.calcite.rex.RexSlot</node>
+    <node x="458.75000000000006" y="290.0">org.apache.calcite.rel.core.Match.RexMRAggCall</node>
+    <node x="609.75" y="268.0">org.apache.calcite.rex.RexOver</node>
+    <node x="768.0" y="514.0">org.apache.calcite.rex.RexTableInputRef</node>
+    <node x="280.75000000000006" y="279.0">org.apache.calcite.rel.core.Window.RexWinAggCall</node>
+    <node x="307.00000000000006" y="112.0">org.apache.calcite.rex.RexCall</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.apache.calcite.rel.core.Match.RexMRAggCall" target="org.apache.calcite.rex.RexCall">
+      <point x="0.0" y="-25.5" />
+      <point x="524.25" y="243.0" />
+      <point x="475.75000000000006" y="243.0" />
+      <point x="33.75" y="47.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexDynamicParam" target="org.apache.calcite.rex.RexVariable">
+      <point x="0.0" y="-25.5" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexOver" target="org.apache.calcite.rex.RexCall">
+      <point x="0.0" y="-47.5" />
+      <point x="699.75" y="243.0" />
+      <point x="543.25" y="243.0" />
+      <point x="101.25" y="47.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexCorrelVariable" target="org.apache.calcite.rex.RexVariable">
+      <point x="0.0" y="-25.5" />
+      <point x="1199.75" y="243.0" />
+      <point x="1080.75" y="243.0" />
+      <point x="57.0" y="36.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexPatternFieldRef" target="org.apache.calcite.rex.RexInputRef">
+      <point x="0.0" y="-25.5" />
+      <point x="669.5" y="489.0" />
+      <point x="719.75" y="489.0" />
+      <point x="-46.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexInputRef" target="org.apache.calcite.rex.RexSlot">
+      <point x="0.0" y="-25.5" />
+      <point x="765.75" y="388.0" />
+      <point x="838.75" y="388.0" />
+      <point x="-29.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexSubQuery" target="org.apache.calcite.rex.RexCall">
+      <point x="0.0" y="-25.5" />
+      <point x="193.25" y="243.0" />
+      <point x="340.75000000000006" y="243.0" />
+      <point x="-101.25" y="47.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexTableInputRef" target="org.apache.calcite.rex.RexInputRef">
+      <point x="0.0" y="-25.5" />
+      <point x="862.0" y="489.0" />
+      <point x="811.75" y="489.0" />
+      <point x="46.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexVariable" target="org.apache.calcite.rex.RexNode">
+      <point x="0.0" y="-36.5" />
+      <point x="1023.75" y="81.0" />
+      <point x="761.375" y="81.0" />
+      <point x="28.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rel.core.Window.RexWinAggCall" target="org.apache.calcite.rex.RexCall">
+      <point x="0.0" y="-36.5" />
+      <point x="359.75000000000006" y="243.0" />
+      <point x="408.25000000000006" y="243.0" />
+      <point x="-33.75" y="47.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexSlot" target="org.apache.calcite.rex.RexVariable">
+      <point x="0.0" y="-25.5" />
+      <point x="867.75" y="243.0" />
+      <point x="966.75" y="243.0" />
+      <point x="-57.0" y="36.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexLiteral" target="org.apache.calcite.rex.RexNode">
+      <point x="0.0" y="-58.5" />
+      <point x="143.5" y="71.0" />
+      <point x="677.375" y="71.0" />
+      <point x="-56.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexCall" target="org.apache.calcite.rex.RexNode">
+      <point x="0.0" y="-47.5" />
+      <point x="442.00000000000006" y="81.0" />
+      <point x="705.375" y="81.0" />
+      <point x="-28.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexFieldAccess" target="org.apache.calcite.rex.RexNode">
+      <point x="0.0" y="-36.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexRangeRef" target="org.apache.calcite.rex.RexNode">
+      <point x="0.0" y="-36.5" />
+      <point x="1214.75" y="71.0" />
+      <point x="789.375" y="71.0" />
+      <point x="56.0" y="25.5" />
+    </edge>
+    <edge source="org.apache.calcite.rex.RexLocalRef" target="org.apache.calcite.rex.RexSlot">
+      <point x="0.0" y="-25.5" />
+      <point x="969.75" y="388.0" />
+      <point x="896.75" y="388.0" />
+      <point x="29.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="754.0" y="282.5" />
+  <SelectedNodes>
+    <node>org.apache.calcite.rex.RexNode</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
