@@ -39,3 +39,12 @@ RuleQueue：VolcanoPlanner 专用，需要关注的是 phaseRuleMapping 和 matc
 那么另一个问题来了：
 
 - [ ] 什么时候 fireRules()?
+
+    目前只有两个地方会去 fireRules()，分别是 VolcanoPlanner.registerImpl() 和 RelSet.mergeWith()，然后再翻一下调用链会发现，
+    所有的线索都指向了 VolcanoPlanner.registerImpl()。它才是一切 fireRules() 的源头。那么 registerImpl() 主要是做什么呢？谁在调用它?
+    
+    VolcanoPlanner 中有一个 **mapRel2Subset** 用来将 RelNode 映射成 ReslSubSet，需要关注一下，判断某个 RelNode 是否注册过也是通过
+    这个 Map 来实现的。在调用 registerImpl() 函数的时候：
+    - 需要确保该 RelNode 没有被注册过
+    - 需要确保该 RelNode 的 callint convention trait 不为空
+    - 需要确保该 RelNode 的 trait 数量和 VolcanoPlanner 中注册的 trait definition 数量相同
