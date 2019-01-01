@@ -48,3 +48,19 @@ RuleQueue：VolcanoPlanner 专用，需要关注的是 phaseRuleMapping 和 matc
     - 需要确保该 RelNode 没有被注册过
     - 需要确保该 RelNode 的 callint convention trait 不为空
     - 需要确保该 RelNode 的 trait 数量和 VolcanoPlanner 中注册的 trait definition 数量相同
+    
+### RelTraitDef
+    
+### RelSet/RelSubSet/RelNode
+
+这里总结一下 VolcanoPlanner 的几个 Register 方法以及涉及到的 RelSet/RelSubSet/RelNode 的概念
+
+- **RelNode**:
+  1. RelSubSet 是一类特殊的 RelNode，RelSubSet 中的所有 RelNode 具有同样的 `RelTrait`s
+  2. Converter 也是一类特殊的 RelNode
+  
+RelSet 的合并发生在函数
+
+`VolcanoPlanner.register(RelNode rel, RelNode equiv)`:
+  - 先找到 `equiv` 所属的 `RelSet`，然后调用 `VolcanoPlanner.registerImpl(rel, set)` 递归的对 rel 中的各个节点完成注册和 rule 的 fire（将 match 的 rule 添加到 rule match queue 里面）
+    
